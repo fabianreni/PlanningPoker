@@ -1,0 +1,85 @@
+{
+  "project_info": {
+    "project_number": "742287382077",
+    "firebase_url": "https://planningpoker-d5a23.firebaseio.com",
+    "project_id": "planningpoker-d5a23",
+    "storage_bucket": "planningpoker-d5a23.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:742287382077:android:0f7f6c48ae52c79f02fc54",
+        "android_client_info": {
+          "package_name": "com.example.planningpokeradmin"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "742287382077-gboqd6i0k94bta8gqdrk80s39u62nl5g.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.planningpokeradmin",
+            "certificate_hash": "7c8b71e8f1824a911f8cbe70dfc1ba55a805bb59"
+          }
+        },
+        {
+          "client_id": "742287382077-9arlvqcb0vffbvfpd8rgko0atdc7abge.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCFhkIJC81LuR6rGuIb29ODDc1jFo-NUcE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "742287382077-9arlvqcb0vffbvfpd8rgko0atdc7abge.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:742287382077:android:d3e777b28aca781e02fc54",
+        "android_client_info": {
+          "package_name": "com.example.planningpokerusers"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "742287382077-t0sgps90sdkj6cjpdpur5tcbp4pojcc0.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.planningpokerusers",
+            "certificate_hash": "7c8b71e8f1824a911f8cbe70dfc1ba55a805bb59"
+          }
+        },
+        {
+          "client_id": "742287382077-9arlvqcb0vffbvfpd8rgko0atdc7abge.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCFhkIJC81LuR6rGuIb29ODDc1jFo-NUcE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "742287382077-9arlvqcb0vffbvfpd8rgko0atdc7abge.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

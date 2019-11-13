@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">PlanningPokerAdmin</string>
+    <string name="bt_addGroup">Add Group</string>
+    <string name="bt_result">View Results</string>
+    <string name="et_groupName">Group Name</string>
+    <string name="tv_groupName">Group Name</string>
 </resources>
