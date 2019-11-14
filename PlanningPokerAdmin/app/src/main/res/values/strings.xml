@@ -2,6 +2,17 @@
     <string name="app_name">PlanningPokerAdmin</string>
     <string name="bt_addGroup">Add Group</string>
     <string name="bt_result">View Results</string>
+    <string name="bt_questions">Add questions</string>
     <string name="et_groupName">Group Name</string>
     <string name="tv_groupName">Group Name</string>
+    <string name="bt_settings">SETTINGS</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="tv_Settings">Group Settings</string>
+    <string name="et_settCode">Join Code</string>
+    <string name="tv_questions">Question</string>
+    <string name="et_Questions">Questions</string>
+    <string name="bt_Question">Add Question</string>
+    <string name="tv_addedQuestion">Addid Question</string>
 </resources>
