@@ -1,6 +1,8 @@
 package com.example.planningpokerusers;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.FragmentManager;
+
 import android.os.Bundle;
 
 public class MainActivity extends AppCompatActivity {
@@ -9,5 +11,10 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        if (savedInstanceState == null)
+        {
+            FragmentManager fm = getSupportFragmentManager();
+            fm.beginTransaction().replace(R.id.mainActivity, new UserJoinFragment()).commit();
+        }
     }
 }
