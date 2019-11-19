@@ -1,9 +1,9 @@
 package com.example.planningpokeradmin;
 
-public class Questions {
+public class QuestionsClass {
     private  String questions;
 
-    public Questions(String questions) {
+    public QuestionsClass(String questions) {
         this.questions = questions;
     }
 
@@ -15,7 +15,7 @@ public class Questions {
         this.questions = questions;
     }
 
-    public Questions(){
+    public QuestionsClass(){
 
     }
 }

@@ -2,6 +2,7 @@
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
+    android:id="@+id/groupsettings"
     android:layout_height="match_parent"
     tools:context=".GroupSettingsFragment">
 
@@ -37,7 +38,14 @@
             android:layout_marginLeft="16dp"
             android:text="@string/et_settCode" />
 
-
+        <Button
+            android:id="@+id/bt_questions"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="16dp"
+            android:onClick="qouestionsAdd"
+            android:text="@string/bt_questions" />
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/my_recyclerViewQuestions"
             android:layout_width="match_parent"
@@ -53,7 +61,7 @@
             android:id="@+id/bt_sett"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Button"
+            android:text="@string/bt_sett"
             android:layout_marginTop="16dp"
             android:layout_marginBottom="16dp"
             android:layout_marginRight="16dp"

@@ -15,4 +15,6 @@
     <string name="et_Questions">Questions</string>
     <string name="bt_Question">Add Question</string>
     <string name="tv_addedQuestion">Addid Question</string>
+    <string name="bt_question">Add questions</string>
+    <string name="bt_sett">Set</string>
 </resources>

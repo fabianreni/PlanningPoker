@@ -12,11 +12,11 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
 
-public class MyAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
+public class MyAdapterGroup extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
     Context context;
    ArrayList<GroupClass> item;
 
-    public  MyAdapter(Context context, ArrayList<GroupClass> item){
+    public MyAdapterGroup(Context context, ArrayList<GroupClass> item){
         this.context=context;
         this.item=item;
     }

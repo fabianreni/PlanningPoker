@@ -9,4 +9,6 @@
     <string name="et_yourName">Name</string>
     <string name="tv_question">TextView</string>
     <string name="bt_Submit">Submit</string>
+    <string name="et_results">Results</string>
+    <string name="tv_groupName">Group name</string>
 </resources>

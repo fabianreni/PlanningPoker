@@ -2,6 +2,7 @@ package com.example.planningpokeradmin;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -27,10 +28,27 @@ public class MainActivity extends AppCompatActivity {
         //set fragment
         if (savedInstanceState == null)
         {
-            FragmentManager fm = getSupportFragmentManager();
-            fm.beginTransaction().replace(R.id.mainactivity, new GroupFragment()).commit();
+            FragmentTransaction fragmentTransaction=getSupportFragmentManager().beginTransaction();
+            fragmentTransaction.replace(R.id.mainActivity, new GroupFragment());
+            fragmentTransaction.addToBackStack(null);
+            fragmentTransaction.commit();
         }
 
     }
+    public void settingsGroup(View v){
+        FragmentTransaction fragmentTransaction=getSupportFragmentManager().beginTransaction();
+        fragmentTransaction.replace(R.id.mainActivity, new GroupSettingsFragment());
+        fragmentTransaction.addToBackStack(null);
+        fragmentTransaction.commit();
+    }
+
+    public  void qouestionsAdd(View v){
+        FragmentTransaction fragmentTransaction=getSupportFragmentManager().beginTransaction();
+        fragmentTransaction.replace(R.id.mainActivity, new AddQuestionsFragment());
+        fragmentTransaction.addToBackStack(null);
+        fragmentTransaction.commit();
+    }
+
+
 }
 

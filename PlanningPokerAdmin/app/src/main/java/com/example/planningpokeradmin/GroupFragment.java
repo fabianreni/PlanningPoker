@@ -1,10 +1,10 @@
 package com.example.planningpokeradmin;
 
-import android.content.Context;
-import android.net.Uri;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -55,7 +55,7 @@ public class GroupFragment extends Fragment {
         loadData();
         recyclerView= v.findViewById(R.id.my_recyclerViewGroups);
         recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
-        recyclerView.setAdapter(new MyAdapter(this.getActivity(), myDataset));
+        recyclerView.setAdapter(new MyAdapterGroup(this.getActivity(), myDataset));
 
 
         return v;
@@ -77,5 +77,6 @@ public class GroupFragment extends Fragment {
             public void onCancelled(DatabaseError databaseError) {}
         });
     }
+
 
 }

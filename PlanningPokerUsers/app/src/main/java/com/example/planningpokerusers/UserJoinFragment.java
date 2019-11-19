@@ -27,7 +27,7 @@ public class UserJoinFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 FragmentTransaction fragmentTransaction=getFragmentManager().beginTransaction();
-                fragmentTransaction.replace(R.id.fragment_user, new QuestionsRespunseSubmitFragment());
+                fragmentTransaction.replace(R.id.mainActivity, new QuestionsRespunseSubmitFragment());
                 fragmentTransaction.addToBackStack(null);
                 fragmentTransaction.commit();
             }

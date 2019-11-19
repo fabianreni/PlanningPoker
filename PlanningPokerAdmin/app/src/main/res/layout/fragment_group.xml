@@ -7,25 +7,29 @@
     tools:context=".GroupFragment">
 
 
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginTop="16dp"
-        android:layout_marginBottom="16dp"
-        android:layout_marginRight="16dp"
         android:layout_marginLeft="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginBottom="16dp"
         android:orientation="vertical">
 
         <EditText
             android:id="@+id/et_groupName"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:ems="10"
             android:layout_marginTop="16dp"
             android:layout_marginBottom="16dp"
+            android:autofillHints=""
+            android:ems="10"
             android:inputType="textPersonName"
-            android:text="@string/et_groupName"
-            android:autofillHints="" />
+            android:text="@string/et_groupName" />
 
         <Button
             android:id="@+id/bt_add"
@@ -41,13 +45,9 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
             android:layout_marginBottom="16dp" />
-        <Button
-            android:id="@+id/bt_questions"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:layout_marginBottom="16dp"
-            android:text="@string/bt_questions" />
+
+
+
         <Button
             android:id="@+id/bt_result"
             android:layout_width="match_parent"
@@ -57,4 +57,5 @@
             android:text="@string/bt_result" />
 
     </LinearLayout>
+    </ScrollView>
 </FrameLayout>
