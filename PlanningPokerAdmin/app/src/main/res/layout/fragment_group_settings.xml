@@ -26,17 +26,15 @@
             android:layout_marginLeft="16dp"
             android:text="@string/tv_Settings" />
 
-        <EditText
-            android:id="@+id/et_joinCode"
+        <TextView
+            android:id="@+id/tv_Groupname"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:ems="10"
-            android:inputType="textPersonName"
             android:layout_marginTop="16dp"
             android:layout_marginBottom="16dp"
             android:layout_marginRight="16dp"
             android:layout_marginLeft="16dp"
-            android:text="@string/et_settCode" />
+            android:text="TextView" />
 
         <Button
             android:id="@+id/bt_questions"
@@ -44,27 +42,19 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
             android:layout_marginBottom="16dp"
-            android:onClick="qouestionsAdd"
+
             android:text="@string/bt_questions" />
+
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/my_recyclerViewQuestions"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginLeft="16dp"
             android:layout_marginTop="16dp"
-            android:layout_marginBottom="16dp"
             android:layout_marginRight="16dp"
-            android:layout_marginLeft="16dp">
+            android:layout_marginBottom="16dp">
 
         </androidx.recyclerview.widget.RecyclerView>
 
-        <Button
-            android:id="@+id/bt_sett"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/bt_sett"
-            android:layout_marginTop="16dp"
-            android:layout_marginBottom="16dp"
-            android:layout_marginRight="16dp"
-            android:layout_marginLeft="125dp"/>
     </LinearLayout>
 </FrameLayout>

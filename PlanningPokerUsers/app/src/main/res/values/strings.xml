@@ -11,4 +11,8 @@
     <string name="bt_Submit">Submit</string>
     <string name="et_results">Results</string>
     <string name="tv_groupName">Group name</string>
+    <string name="bt_1">1</string>
+    <string name="Name">Name</string>
+    <string name="groupName">groupName</string>
+    <string name="tv_quest">Question</string>
 </resources>
