@@ -28,7 +28,7 @@ import java.util.Map;
 
 public class GroupFragment extends Fragment {
     Button addGroup;
-    EditText grupName,groupStatus;
+    EditText grupName;
     DatabaseReference databaseReference;
     private RecyclerView recyclerView;
     private ArrayList<GroupClass> myDataset;
@@ -39,23 +39,23 @@ public class GroupFragment extends Fragment {
 
         databaseReference= FirebaseDatabase.getInstance().getReference("planningpoker");
         grupName=v.findViewById(R.id.et_groupName);
-        groupStatus=v.findViewById(R.id.et_groupStatus);
+       // groupStatus=v.findViewById(R.id.et_groupStatus);
         addGroup=v.findViewById(R.id.bt_add);
         recyclerView= v.findViewById(R.id.my_recyclerViewGroups);
         addGroup.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 String groupName = grupName.getText().toString();
-                String groupS=groupStatus.getText().toString();
+              //  String groupS=groupStatus.getText().toString();
                 if (!TextUtils.isEmpty(groupName)) {
                     //String id=databaseReference.push().getKey();
 //                    String groupid = databaseReference.push().getKey();
 //                    GroupClass group = new GroupClass("groupom","aktiv");
 //                    databaseReference.child(groupid).setValue(group);
-                    GroupClass group = new GroupClass(groupName,groupS);
+                  //  GroupClass group = new GroupClass(groupName,groupS);
                     Map<String, String> groupinf=new HashMap<>();
                     groupinf.put("groupName",groupName);
-                    groupinf.put("status",groupS);
+                  //  groupinf.put("status",groupS);
                   databaseReference.child("Groups").child(groupName).setValue(groupinf);
 //
 
@@ -63,12 +63,7 @@ public class GroupFragment extends Fragment {
                 }
             }
         });
-//        //set recyclerView;
-//        myDataset=new ArrayList<>();
-//        loadData();
-//        recyclerView= v.findViewById(R.id.my_recyclerViewGroups);
-//        recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
-//        recyclerView.setAdapter(new MyAdapterGroup(this.getActivity(), myDataset));
+//
         //set recyclerView;
         myDataset=new ArrayList<>();
         FirebaseDatabase.getInstance().getReference("planningpoker").child("Groups").addListenerForSingleValueEvent(new ValueEventListener()

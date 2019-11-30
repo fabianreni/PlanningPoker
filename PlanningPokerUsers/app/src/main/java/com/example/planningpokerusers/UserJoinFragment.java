@@ -33,7 +33,6 @@ public class UserJoinFragment extends Fragment {
     EditText name,gname;
     SharedPreferences sharedpreferences;
     DatabaseReference databaseReference;
-    private ArrayList<UserClass> myDataset;
     public static final String MyPREFERENCES = "MyPrefs" ;
 
     @Override
@@ -65,17 +64,15 @@ public class UserJoinFragment extends Fragment {
                 String gn=gname.getText().toString();
 
                 if (!TextUtils.isEmpty(n)) {
-                    //String id=databaseReference.push().getKey();
-                    //Toast.makeText(getActivity(),"Saving!",Toast.LENGTH_LONG).show();
-                    UserClass nUser = new UserClass(n);
+
                     databaseReference = FirebaseDatabase.getInstance().getReference();
-                    databaseReference.child("planningpoker").child("Groups").child(gn).child("Users").setValue(nUser);
+                    databaseReference.child("planningpoker").child("Groups").child(gn).child("Users").child(n).setValue(n);
 
                 }
-                myDataset=new ArrayList<>();
-            //    loadData();
-                SharedPreferences.Editor editor=sharedpreferences.edit();
 
+
+                //pute value in sharedpreferences
+                SharedPreferences.Editor editor=sharedpreferences.edit();
                 editor.putString(getActivity().getString(R.string.Name),n);
                 editor.putString(getActivity().getString(R.string.groupName),gn);
                 editor.commit();
@@ -88,22 +85,5 @@ public class UserJoinFragment extends Fragment {
         return v;
     }
 
-//    public void loadData()
-//    {
-//        FirebaseDatabase.getInstance().getReference("planningpoker").child("Groups").addListenerForSingleValueEvent(new ValueEventListener()
-//        {
-//            @Override
-//            public void onDataChange(DataSnapshot dataSnapshot)
-//            {
-//                for (DataSnapshot snapshot : dataSnapshot.getChildren())
-//                {
-//                    myDataset.add(snapshot.getValue(UserClass.class));
-//                }
-//            }
-//
-//            @Override
-//            public void onCancelled(DatabaseError databaseError) {}
-//        });
-//    }
 
 }

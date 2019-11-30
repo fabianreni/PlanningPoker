@@ -1,16 +1,30 @@
 package com.example.planningpokerusers;
 
 public class ResultsClass {
-   private String value;
+   private String name;
+    private String vote;
 
-    public ResultsClass(String value) {
-        this.value = value;
+    public ResultsClass(){
+
+    }
+    public ResultsClass(String name, String vote) {
+        this.name = name;
+        this.vote = vote;
     }
 
-    public String getValues() {
-        return value;
+    public String getName() {
+        return name;
     }
-    public void setValue(String value) {
-        this.value = value;
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getVote() {
+        return vote;
+    }
+
+    public void setVote(String vote) {
+        this.vote = vote;
     }
 }

@@ -27,8 +27,9 @@ import java.util.ArrayList;
 
 public class ViewResults extends Fragment {
     String groupn, username;
-    TextView tv_question;
+    TextView question;
     private ArrayList<ResultsClass> myDataset=new ArrayList<>();
+    private ArrayList<Question> questionList=new ArrayList<>();
     private RecyclerView recyclerView;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -39,12 +40,17 @@ public class ViewResults extends Fragment {
        //get sharedpref
         SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(getActivity());
         groupn = preferences.getString(getString(R.string.groupName), "defaultValue");
+
         //set groupname
         TextView group_name;
         group_name=v.findViewById(R.id.tv_groupName);
         group_name.setText(groupn);
+
         //inicialize recycler view
         recyclerView= v.findViewById(R.id.my_recyclerViewGroups);
+
+        question=v.findViewById(R.id.tv_quest);
+
 
         //get query
         final Context context = getActivity();
@@ -56,12 +62,14 @@ public class ViewResults extends Fragment {
                 if (dataSnapshot.exists()) {
                     for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
                         ResultsClass results = snapshot.getValue(ResultsClass.class);
+                        Question question = snapshot.getValue(Question.class);
+                        questionList.add(question);
                         myDataset.add(results);
                     }
+                    question.setText(questionList.get(0).getQuestions());
+
                     recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
                     recyclerView.setAdapter(new MyAdapterResults(context, myDataset));
-                    //questionList.notify();
-                    //tv_question.setText(questionList.get(0).getQuestions());
                 }
             }
 

@@ -1,5 +1,5 @@
 package com.example.planningpokerusers;
-
+//class for question
 public class Question {
     private  String questions;
     private String groupId;

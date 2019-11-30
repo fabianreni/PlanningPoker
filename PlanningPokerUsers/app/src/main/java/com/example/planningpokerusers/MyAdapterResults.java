@@ -10,7 +10,7 @@ import android.widget.TextView;
 import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
-
+//adapter for results recyclerView
 public class MyAdapterResults  extends RecyclerView.Adapter<RecyclerView.ViewHolder>{
         Context context;
         ArrayList<ResultsClass> item;
@@ -40,7 +40,7 @@ public class MyAdapterResults  extends RecyclerView.Adapter<RecyclerView.ViewHol
 
         @Override
         public void onBindViewHolder(RecyclerView.ViewHolder holder,int position){
-            ((Item)holder).result.setText(item.get(position).getValues());
+            ((Item)holder).result.setText((item.get(position).getName()+":"+item.get(position).getVote()));
         }
 
         @Override

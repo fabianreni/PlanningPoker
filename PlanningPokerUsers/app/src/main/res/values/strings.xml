@@ -5,7 +5,7 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="bt_join">Join</string>
     <string name="tv_userLogin">User Login</string>
-    <string name="et_groupName">Name</string>
+    <string name="et_groupName">GroupName</string>
     <string name="et_yourName">Name</string>
     <string name="tv_question">TextView</string>
     <string name="bt_Submit">Submit</string>

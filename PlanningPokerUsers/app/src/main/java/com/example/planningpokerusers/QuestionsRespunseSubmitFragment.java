@@ -27,31 +27,29 @@ import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 
 
 public class QuestionsRespunseSubmitFragment extends Fragment {
-    DatabaseReference dbGroups;
     Button b1,b2,b3,b4,b5,b6,b7;
     TextView tv_question;
     String groupn, username;
     private ArrayList <Question> questionList = new ArrayList<>();
-//    @RequiresApi(api = Build.VERSION_CODES.JELLY_BEAN)
-    @Override
+
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         final View v = inflater.inflate(R.layout.fragment_questions_respunse_submit, container, false);
+
         //get text view to set the question;
         tv_question=v.findViewById(R.id.tv_question);
+
         //get SharedPreferences
         SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(getActivity());
         groupn = preferences.getString(getString(R.string.groupName), "defaultValue");
         username = preferences.getString(getString(R.string.Name), "defaultValue");
 
-
-//        //select from group
-//        dbGroups= FirebaseDatabase.getInstance().getReference("planningpoker");
-//        dbGroups.addListenerForSingleValueEvent(valueEventListener);
-
+        //set the question
         final Query query=FirebaseDatabase.getInstance().getReference("planningpoker").child("Questions").orderByChild("groupCode").equalTo(groupn);
         query.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
@@ -62,8 +60,12 @@ public class QuestionsRespunseSubmitFragment extends Fragment {
                         Question question = snapshot.getValue(Question.class);
                         questionList.add(question);
                     }
-                    //questionList.notify();
                     tv_question.setText(questionList.get(0).getQuestions());
+
+//                    for(int i=0; i<questionList.size();++i){
+//                        tv_question.setText(questionList.get(i).getQuestions());
+//                    }
+
                 }
             }
 
@@ -73,13 +75,10 @@ public class QuestionsRespunseSubmitFragment extends Fragment {
             }
         });
 
-
-
         // Inflate the layout for this fragment
-
         b1=v.findViewById(R.id.bt_1);
          b1.setBackgroundResource(R.drawable.assz1);
-       b2= v.findViewById(R.id.bt_2);
+        b2= v.findViewById(R.id.bt_2);
         b2.setBackgroundResource(R.drawable.kettes);
         b3= v.findViewById(R.id.bt_3);
         b3.setBackgroundResource(R.drawable.harom);
@@ -92,6 +91,7 @@ public class QuestionsRespunseSubmitFragment extends Fragment {
         b7= v.findViewById(R.id.bt_7);
         b7.setBackgroundResource(R.drawable.tiz);
 
+        //onclicklistener for vots
         b1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -135,20 +135,17 @@ public class QuestionsRespunseSubmitFragment extends Fragment {
             }
         });
 
-
-
-
-
-
         return v;
     }
 
-
+    //vote submit end send to database
     public void sendResponse(Button b){
         String vote = b.getContentDescription().toString();
         DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReference();
-        databaseReference.child("planningpoker").child("Questions").child(tv_question.getText().toString()).child("Users").child("user").child("userVote").setValue(vote);
-        databaseReference.child("planningpoker").child("Questions").child(tv_question.getText().toString()).child("Users").child("user").child("userName").setValue(username);
+        Map<String, String> userinf=new HashMap<>();
+        userinf.put("UserName",username);
+        userinf.put("Vote",vote);
+        databaseReference.child("planningpoker").child("Questions").child(tv_question.getText().toString()).child("Users").child(username).setValue(userinf);
         FragmentTransaction fragmentTransaction=getFragmentManager().beginTransaction();
         fragmentTransaction.replace(R.id.mainActivity, new ViewResults());
         fragmentTransaction.addToBackStack(null);
