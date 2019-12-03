@@ -35,16 +35,7 @@ public class MainActivity extends AppCompatActivity {
         }
 
     }
-//    public void settingsGroup(View v){
-//
-//    }
 
-    public  void qouestionsAdd(View v){
-        FragmentTransaction fragmentTransaction=getSupportFragmentManager().beginTransaction();
-        fragmentTransaction.replace(R.id.mainActivity, new AddQuestionsFragment());
-        fragmentTransaction.addToBackStack(null);
-        fragmentTransaction.commit();
-    }
 
 
 }

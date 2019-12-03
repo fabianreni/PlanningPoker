@@ -13,9 +13,9 @@
             android:id="@+id/tv_groupName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="32dp"
+            android:layout_marginLeft="8dp"
             android:layout_marginTop="16dp"
-            android:layout_marginRight="32dp"
+            android:layout_marginRight="8dp"
             android:layout_marginBottom="16dp"
             android:text="@string/tv_groupName" />
 
@@ -23,11 +23,20 @@
             android:id="@+id/bt_settings"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="32dp"
-            android:layout_marginLeft="32dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginLeft="8dp"
             android:layout_marginTop="16dp"
             android:layout_marginBottom="16dp"
             android:text="@string/bt_settings" />
+        <Button
+            android:id="@+id/bt_result"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="16dp"
+            android:text="@string/bt_result" />
     </LinearLayout>
 
 </LinearLayout>

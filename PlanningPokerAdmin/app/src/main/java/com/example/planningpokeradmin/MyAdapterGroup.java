@@ -35,7 +35,8 @@ public class MyAdapterGroup extends RecyclerView.Adapter<RecyclerView.ViewHolder
 
     @Override
     public void onBindViewHolder(RecyclerView.ViewHolder holder, final int position) {
-        ((Item)holder).textView.setText(item.get(position).getGroupName());
+
+        //a fooldal 2 gombja fragment atvitel
         ((Item)holder).settings.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -50,6 +51,20 @@ public class MyAdapterGroup extends RecyclerView.Adapter<RecyclerView.ViewHolder
                 fragmentTransaction.commit();
             }
         });
+        ((Item)holder).results.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                SharedPreferences sharedpreferences = PreferenceManager.getDefaultSharedPreferences(context);
+                SharedPreferences.Editor editor=sharedpreferences.edit();
+
+                editor.putString(context.getString(R.string.GroupName),item.get(position).getGroupName());
+                editor.commit();
+                FragmentTransaction fragmentTransaction=((MainActivity) context).getSupportFragmentManager().beginTransaction();
+                fragmentTransaction.replace(R.id.mainActivity, new ViewResultsFragmen());
+                fragmentTransaction.addToBackStack(null);
+                fragmentTransaction.commit();
+            }
+        });
     }
 
     @Override
@@ -58,11 +73,12 @@ public class MyAdapterGroup extends RecyclerView.Adapter<RecyclerView.ViewHolder
     }
     public class Item extends  RecyclerView.ViewHolder{
         TextView textView;
-        Button settings;
+        Button settings,results;
         public Item( View itemView) {
             super(itemView);
             textView=(TextView) itemView.findViewById(R.id.tv_groupName);
             settings=(Button) itemView.findViewById(R.id.bt_settings);
+            results=(Button) itemView.findViewById(R.id.bt_result);
         }
     }
 

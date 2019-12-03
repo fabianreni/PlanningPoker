@@ -35,7 +35,7 @@ public class QuestionsRespunseSubmitFragment extends Fragment {
     Button b1,b2,b3,b4,b5,b6,b7;
     TextView tv_question;
     String groupn, username;
-    private ArrayList <Question> questionList = new ArrayList<>();
+    String active_question="";
 
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -51,21 +51,83 @@ public class QuestionsRespunseSubmitFragment extends Fragment {
 
         //set the question
         final Query query=FirebaseDatabase.getInstance().getReference("planningpoker").child("Questions").orderByChild("groupCode").equalTo(groupn);
+        //bealit kerdest ha nincs aktiv akor nem
         query.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
-                questionList.clear();
                 if (dataSnapshot.exists()) {
                     for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
                         Question question = snapshot.getValue(Question.class);
-                        questionList.add(question);
+                        String status = snapshot.child("Status").getValue().toString();
+                        if(status.equals("Active")){
+                            active_question = question.getQuestions();
+                        }
                     }
-                    tv_question.setText(questionList.get(0).getQuestions());
+                    if(active_question.equals("")){
+                        tv_question.setText("No active questions");
+                        return;
+                    }
+                    tv_question.setText(active_question);
 
-//                    for(int i=0; i<questionList.size();++i){
-//                        tv_question.setText(questionList.get(i).getQuestions());
-//                    }
+                    // Inflate the layout for this fragment
+                    b1=v.findViewById(R.id.bt_1);
+                    b1.setBackgroundResource(R.drawable.assz1);
+                    b2= v.findViewById(R.id.bt_2);
+                    b2.setBackgroundResource(R.drawable.kettes);
+                    b3= v.findViewById(R.id.bt_3);
+                    b3.setBackgroundResource(R.drawable.harom);
+                    b4= v.findViewById(R.id.bt_4);
+                    b4.setBackgroundResource(R.drawable.negy);
+                    b5= v.findViewById(R.id.bt_5);
+                    b5.setBackgroundResource(R.drawable.ot);
+                    b6= v.findViewById(R.id.bt_6);
+                    b6.setBackgroundResource(R.drawable.nyolc);
+                    b7= v.findViewById(R.id.bt_7);
+                    b7.setBackgroundResource(R.drawable.tiz);
 
+                    //onclicklistener for vots
+                    b1.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            sendResponse(b1);
+                        }
+                    });
+                    b2.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            sendResponse(b2);
+                        }
+                    });
+                    b3.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            sendResponse(b3);
+                        }
+                    });
+                    b4.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            sendResponse(b4);
+                        }
+                    });
+                    b5.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            sendResponse(b5);
+                        }
+                    });
+                    b6.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            sendResponse(b6);
+                        }
+                    });
+                    b7.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            sendResponse(b7);
+                        }
+                    });
                 }
             }
 
@@ -75,65 +137,7 @@ public class QuestionsRespunseSubmitFragment extends Fragment {
             }
         });
 
-        // Inflate the layout for this fragment
-        b1=v.findViewById(R.id.bt_1);
-         b1.setBackgroundResource(R.drawable.assz1);
-        b2= v.findViewById(R.id.bt_2);
-        b2.setBackgroundResource(R.drawable.kettes);
-        b3= v.findViewById(R.id.bt_3);
-        b3.setBackgroundResource(R.drawable.harom);
-        b4= v.findViewById(R.id.bt_4);
-        b4.setBackgroundResource(R.drawable.negy);
-        b5= v.findViewById(R.id.bt_5);
-        b5.setBackgroundResource(R.drawable.ot);
-        b6= v.findViewById(R.id.bt_6);
-        b6.setBackgroundResource(R.drawable.nyolc);
-        b7= v.findViewById(R.id.bt_7);
-        b7.setBackgroundResource(R.drawable.tiz);
 
-        //onclicklistener for vots
-        b1.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                sendResponse(b1);
-            }
-        });
-        b2.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                sendResponse(b2);
-            }
-        });
-        b3.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                sendResponse(b3);
-            }
-        });
-        b4.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                sendResponse(b4);
-            }
-        });
-        b5.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                sendResponse(b5);
-            }
-        });
-        b6.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                sendResponse(b6);
-            }
-        });
-        b7.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                sendResponse(b7);
-            }
-        });
 
         return v;
     }

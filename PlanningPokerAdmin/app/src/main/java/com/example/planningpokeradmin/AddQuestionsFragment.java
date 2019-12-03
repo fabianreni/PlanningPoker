@@ -24,7 +24,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
-
+//kerdes hozza adas a group setingsbe katintva jon elo
 public class AddQuestionsFragment extends Fragment {
     DatabaseReference databaseReference;
     private RecyclerView recyclerView;
@@ -35,11 +35,13 @@ public class AddQuestionsFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View v=inflater.inflate(R.layout.fragment_add_questions, container, false);
         // Inflate the layout for this fragment
+        View v=inflater.inflate(R.layout.fragment_add_questions, container, false);
+        //database connect
         databaseReference= FirebaseDatabase.getInstance().getReference("planningpoker");
         question=v.findViewById(R.id.questions);
         groupId=v.findViewById(R.id.et_groupid);
+        //button inicializalas
         addQuestions=v.findViewById(R.id.bt_addQuestions);
         //   recycler view initialization
         recyclerView= v.findViewById(R.id.recyclerViewQuestions);
@@ -50,11 +52,12 @@ public class AddQuestionsFragment extends Fragment {
                 String sGroupId=groupId.getText().toString();
                 if (!TextUtils.isEmpty(sQestion)) {
 
-                    QuestionsClass qcQuestion = new QuestionsClass(sQestion,sGroupId);
-
+                    //QuestionsClass qcQuestion = new QuestionsClass(sQestion,sGroupId);
+                    //set questions in database
                     Map<String, String> questioninf=new HashMap<>();
                     questioninf.put("questions",sQestion);
                     questioninf.put("groupCode",sGroupId);
+                    questioninf.put("Status","Inactive");
                     databaseReference.child("Questions").child(sQestion).setValue(questioninf);
                     myDataset=new ArrayList<>();
                     FirebaseDatabase.getInstance().getReference("planningpoker").child("Questions").addListenerForSingleValueEvent(new ValueEventListener()
@@ -66,6 +69,7 @@ public class AddQuestionsFragment extends Fragment {
                             {
                                 myDataset.add(snapshot.getValue(QuestionsClass.class));
                             }
+                            //recycler inicializer/feltoltes
                             recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
                             recyclerView.setAdapter(new MyAdapterQuestions(getActivity(), myDataset));
                         }

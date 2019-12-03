@@ -26,7 +26,7 @@ import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 
-
+//masodik oldal ha szetingszre megyek
 public class GroupSettingsFragment extends Fragment {
     private RecyclerView recyclerView;
     Button bt_add;
@@ -41,22 +41,29 @@ public class GroupSettingsFragment extends Fragment {
         bt_add.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                //go to add question fragment
                 FragmentTransaction fragmentTransaction=getFragmentManager().beginTransaction();
                 fragmentTransaction.replace(R.id.mainActivity, new AddQuestionsFragment());
                 fragmentTransaction.addToBackStack(null);
                 fragmentTransaction.commit();
             }
         });
+
+
         myDataset=new ArrayList<>();
 
         recyclerView= v.findViewById(R.id.my_recyclerViewQuestions);
 
         SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(getActivity());
+
         group= preferences.getString(getString(R.string.GroupName), "defaultValue");
+
         TextView group_name;
         group_name=v.findViewById(R.id.tv_Groupname);
         group_name.setText(group);
+
         final Context context = getActivity();
+
         final Query query=FirebaseDatabase.getInstance().getReference("planningpoker").child("Questions").orderByChild("groupCode").equalTo(group);
         query.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
@@ -68,9 +75,7 @@ public class GroupSettingsFragment extends Fragment {
                         myDataset.add(question);
                     }
                     recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
-                           recyclerView.setAdapter(new MyAdapterQuestionSwitch(context, myDataset));
-                    //questionList.notify();
-                    //tv_question.setText(questionList.get(0).getQuestions());
+                    recyclerView.setAdapter(new MyAdapterQuestionSwitch(context, myDataset));
                 }
             }
 
@@ -79,22 +84,6 @@ public class GroupSettingsFragment extends Fragment {
 
             }
         });
-//        FirebaseDatabase.getInstance().getReference("planningpoker").child("Questions").addListenerForSingleValueEvent(new ValueEventListener()
-//        {
-//            @Override
-//            public void onDataChange(DataSnapshot dataSnapshot)
-//            {
-//                for (DataSnapshot snapshot : dataSnapshot.getChildren())
-//                {
-//                    QuestionsClass groupClass = snapshot.getValue(QuestionsClass.class);
-//                }
-//                recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
-//                recyclerView.setAdapter(new MyAdapterGroup(context, myDataset));
-//            }
-//
-//            @Override
-//            public void onCancelled(DatabaseError databaseError) {}
-//        });
 
         return v;
 

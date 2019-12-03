@@ -2,11 +2,17 @@ package com.example.planningpokeradmin;
 
 public class QuestionsClass {
     private  String questions;
-    private String groupId;
+    private String groupId, status;
 
-    public QuestionsClass(String questions,String groupId) {
+
+    public QuestionsClass(String questions,String groupId, String status) {
         this.questions = questions;
         this.groupId=groupId;
+        this.status = status;
+    }
+
+    public String getStatus() {
+        return status;
     }
 
     public String getGroupId() {
