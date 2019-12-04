@@ -1,4 +1,4 @@
-package com.example.planningpokerusers;
+package com.example.planningpokerusers.Fragment;
 
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -14,6 +14,8 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
 
+import com.example.planningpokerusers.Class.Question;
+import com.example.planningpokerusers.R;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;

@@ -1,17 +1,11 @@
 package com.example.planningpokerusers;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
-import android.content.Context;
-import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.view.View;
-import android.widget.EditText;
-import android.widget.Toast;
 
-import javax.sql.StatementEvent;
+import com.example.planningpokerusers.Fragment.UserJoinFragment;
 
 public class MainActivity extends AppCompatActivity {
 

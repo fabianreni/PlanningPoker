@@ -1,4 +1,4 @@
-package com.example.planningpokeradmin;
+package com.example.planningpokeradmin.Fragment;
 
 import android.os.Bundle;
 
@@ -12,8 +12,10 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.Toast;
 
+import com.example.planningpokeradmin.Adapter.MyAdapterQuestions;
+import com.example.planningpokeradmin.Class.QuestionsClass;
+import com.example.planningpokeradmin.R;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;

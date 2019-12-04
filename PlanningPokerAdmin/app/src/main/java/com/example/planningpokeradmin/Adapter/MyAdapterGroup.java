@@ -1,4 +1,4 @@
-package com.example.planningpokeradmin;
+package com.example.planningpokeradmin.Adapter;
 
 import android.content.Context;
 import android.content.SharedPreferences;
@@ -10,9 +10,14 @@ import android.widget.Button;
 import android.widget.TextView;
 
 
-import androidx.annotation.NonNull;
 import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.example.planningpokeradmin.Class.GroupClass;
+import com.example.planningpokeradmin.Fragment.GroupSettingsFragment;
+import com.example.planningpokeradmin.Fragment.ViewResultsFragmen;
+import com.example.planningpokeradmin.MainActivity;
+import com.example.planningpokeradmin.R;
 
 import java.util.ArrayList;
 
@@ -54,7 +59,7 @@ public class MyAdapterGroup extends RecyclerView.Adapter<RecyclerView.ViewHolder
     @Override
     public void onBindViewHolder(RecyclerView.ViewHolder holder, final int position) {
         ((Item)holder).textView.setText(item.get(position).getGroupName());
-    
+
         //a fooldal 2 gombja fragment atvitel
         ((Item)holder).settings.setOnClickListener(new View.OnClickListener() {
             @Override

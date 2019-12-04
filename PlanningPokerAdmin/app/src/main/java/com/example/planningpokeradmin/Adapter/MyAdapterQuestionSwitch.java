@@ -1,4 +1,4 @@
-package com.example.planningpokeradmin;
+package com.example.planningpokeradmin.Adapter;
 
 import android.content.Context;
 import android.content.SharedPreferences;
@@ -6,14 +6,13 @@ import android.preference.PreferenceManager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.CompoundButton;
 import android.widget.Switch;
-import android.widget.TextView;
 import android.widget.Toast;
 
-import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.planningpokeradmin.Class.QuestionsClass;
+import com.example.planningpokeradmin.R;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;

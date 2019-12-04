@@ -1,15 +1,15 @@
-package com.example.planningpokeradmin;
+package com.example.planningpokerusers.Class;
 
 public class ResultsClass {
-    private String UserName;
+   private String UserName;
     private String Vote;
 
     public ResultsClass(){
 
     }
-    public ResultsClass(String UserName, String vote) {
+    public ResultsClass(String UserName, String Vote) {
         this.UserName = UserName;
-        this.Vote = vote;
+        this.Vote = Vote;
     }
 
     public String getName() {
@@ -24,7 +24,7 @@ public class ResultsClass {
         return Vote;
     }
 
-    public void setVote(String vote) {
-        this.Vote = vote;
+    public void setVote(String Vote) {
+        this.Vote = Vote;
     }
 }

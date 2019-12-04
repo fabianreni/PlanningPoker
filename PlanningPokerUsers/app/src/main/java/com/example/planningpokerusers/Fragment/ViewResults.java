@@ -1,8 +1,7 @@
-package com.example.planningpokerusers;
+package com.example.planningpokerusers.Fragment;
 
 import android.content.Context;
 import android.content.SharedPreferences;
-import android.net.Uri;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -17,6 +16,10 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import com.example.planningpokerusers.Class.Question;
+import com.example.planningpokerusers.Class.ResultsClass;
+import com.example.planningpokerusers.Adapter.MyAdapterResults;
+import com.example.planningpokerusers.R;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;

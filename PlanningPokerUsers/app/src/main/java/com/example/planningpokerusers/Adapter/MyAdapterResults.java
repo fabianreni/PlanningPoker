@@ -1,16 +1,20 @@
-package com.example.planningpokeradmin;
+package com.example.planningpokerusers.Adapter;
 
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+
 import android.widget.TextView;
 
 import androidx.recyclerview.widget.RecyclerView;
 
-import java.util.ArrayList;
+import com.example.planningpokerusers.Class.ResultsClass;
+import com.example.planningpokerusers.R;
 
-public class MyAdapterResults extends RecyclerView.Adapter<RecyclerView.ViewHolder>{
+import java.util.ArrayList;
+//adapter for results recyclerView
+public class MyAdapterResults  extends RecyclerView.Adapter<RecyclerView.ViewHolder>{
         Context context;
         ArrayList<ResultsClass> item;
         public class Item extends RecyclerView.ViewHolder {
@@ -50,4 +54,5 @@ public class MyAdapterResults extends RecyclerView.Adapter<RecyclerView.ViewHold
 
 
     }
+
 

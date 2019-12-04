@@ -1,8 +1,7 @@
-package com.example.planningpokeradmin;
+package com.example.planningpokeradmin.Fragment;
 
 import android.content.Context;
 import android.content.SharedPreferences;
-import android.net.Uri;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -16,6 +15,10 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import com.example.planningpokeradmin.Adapter.MyAdapterResults;
+import com.example.planningpokeradmin.Class.QuestionsClass;
+import com.example.planningpokeradmin.R;
+import com.example.planningpokeradmin.Class.ResultsClass;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.FirebaseDatabase;

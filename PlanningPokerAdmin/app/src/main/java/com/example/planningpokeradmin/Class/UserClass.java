@@ -1,5 +1,4 @@
-package com.example.planningpokerusers;
-
+package com.example.planningpokeradmin.Class;
 
 public class UserClass {
     private  String userName;

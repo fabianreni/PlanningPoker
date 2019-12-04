@@ -1,4 +1,4 @@
-package com.example.planningpokerusers;
+package com.example.planningpokerusers.Class;
 //class for question
 public class Question {
     private  String questions;
