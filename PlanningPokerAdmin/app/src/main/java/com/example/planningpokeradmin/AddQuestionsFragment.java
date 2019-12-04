@@ -60,6 +60,7 @@ public class AddQuestionsFragment extends Fragment {
                     questioninf.put("Status","Inactive");
                     databaseReference.child("Questions").child(sQestion).setValue(questioninf);
                     myDataset=new ArrayList<>();
+
                     FirebaseDatabase.getInstance().getReference("planningpoker").child("Questions").addListenerForSingleValueEvent(new ValueEventListener()
                     {
                         @Override

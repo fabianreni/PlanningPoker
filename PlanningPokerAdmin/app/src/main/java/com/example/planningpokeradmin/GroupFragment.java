@@ -48,7 +48,6 @@ public class GroupFragment extends Fragment {
             public void onClick(View v) {
                 String groupName = grupName.getText().toString();
                 if (!TextUtils.isEmpty(groupName)) {
-
                     Map<String, String> groupinf=new HashMap<>();
                     groupinf.put("groupName",groupName);
 
